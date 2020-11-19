@@ -6,14 +6,13 @@ import lombok.Data;
 @Data
 public class Properties {
 
-    public String id;
-    public String cargoEnElCentro;
+    public String cargoenelcentro;
     public String city;
     public String createdate;
     public String email;
     public String etapa;
     public String firstname;
-    public String hsObjectId;
+    public String hsobjectid;
     public String lastmodifieddate;
     public String lastname;
     public String phone;
