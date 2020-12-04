@@ -6,5 +6,8 @@ import lombok.Data;
 public class Parameters {
     private String hapikey;
     private String properties;
+    private String search_string;
+    private String country;
+    private String state;
 }
 

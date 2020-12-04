@@ -25,4 +25,8 @@ public interface IFeignHubspotClient {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     Contact update(@PathVariable("dataId") Long dataId, @RequestBody Map<String, Object> fields, @SpringQueryMap Parameters params);
+
+    @PostMapping(value = "/contacts")
+    Contact addContact(@RequestBody Map<String, Object> fields, @SpringQueryMap Parameters params);
+
 }

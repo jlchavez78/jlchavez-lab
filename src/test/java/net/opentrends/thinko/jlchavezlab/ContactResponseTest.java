@@ -1,18 +1,16 @@
 package net.opentrends.thinko.jlchavezlab;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import net.opentrends.thinko.jlchavezlab.hubspot.feign.IFeignHubspotClient;
 import net.opentrends.thinko.jlchavezlab.hubspot.model.*;
-import net.opentrends.thinko.jlchavezlab.hubspot.model.Properties;
-import org.apache.commons.collections.ListUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -21,9 +19,6 @@ public class ContactResponseTest {
     @Autowired
     IFeignHubspotClient client;
 
-    /**
-     * Get lead by ID, but you can use search
-     */
     //@Test
     public void testGetLead() {
         Parameters p = new Parameters();
@@ -34,14 +29,14 @@ public class ContactResponseTest {
         System.out.println(c.toString());
     }
 
-    @Test
+//    @Test
     public void searchLead() {
         Parameters p = new Parameters();
         p.setHapikey("9ed620b5-b271-4668-a35e-cdbc757accd0");
         SearchPayload pl = new SearchPayload();
         pl.setAfter(0);
         pl.setLimit(0);
-        pl.setProperties(Arrays.asList("email","firstname"));
+        pl.setProperties(Arrays.asList("email", "firstname"));
         pl.setSorts(Arrays.asList("email"));
         FilterGroups fg = new FilterGroups();
         Filter f = new Filter();
@@ -55,9 +50,6 @@ public class ContactResponseTest {
     }
 
 
-    /**
-     * Save lead
-     */
     //@Test
     public void testSetLead() {
         long lead = 65230701L;
@@ -65,10 +57,36 @@ public class ContactResponseTest {
         param.setHapikey("9ed620b5-b271-4668-a35e-cdbc757accd0");
         Properties p = new Properties();
         p.setFirstname("Juan Luis");
-        p.setEtapa("Primaria");
+//        p.setEtapa("Primaria");
         Map<String, Object> fields = new HashMap<>();
         fields.put("properties", p);
         Contact res = client.update(lead, fields, param);
         System.out.println(res.toString());
+    }
+
+    @Test
+    public void saveHubspotuser() {
+        String id = "";
+        Parameters params = new Parameters();
+        params.setHapikey("9ed620b5-b271-4668-a35e-cdbc757accd0");
+        Contact contact = null;
+        Properties p = new Properties();
+        p.setCity("Barcelona");
+        p.setEmail("jlchavez@opentrends3.net");
+        p.setFirstname("Chavez");
+        p.setLastname("Lobato");
+        p.setPhone("687575756");
+//        p.setEtapa("Primaria");
+//        p.setThinko_que_asignaturas_impartes_(Arrays.asList("Biología y Geología", "Lengua Castellana y Literatura"));
+        p.setThinko_que_asignaturas_impartes_("Biología y Geología;Física y Química;Geografía e Historia");
+        Map<String, Object> fields = new HashMap<>();
+        fields.put("properties", p);
+
+        if (!id.isBlank()) {
+            contact = client.update(Long.getLong(id), fields, params);
+        } else {
+            contact = client.addContact(fields, params);
+        }
+        System.out.println(contact);
     }
 }
