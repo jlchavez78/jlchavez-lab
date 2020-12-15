@@ -19,8 +19,8 @@ public class PasswordsTest {
     public void test() {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         List<String> usuaris = new ArrayList<>();
-        usuaris.add("maitecarratala@lamilagrosaalberic.es;Maite;Carratala;null");
-        usuaris.add("felitous@hotmail.es;Feli;Estarlich;null");
+        usuaris.add("eugenia_robatto@outlook.com;Eugenia;Robatto;null");
+
         for (String user : usuaris) {
             String[] full = user.split(";");
             String username = full[0];
