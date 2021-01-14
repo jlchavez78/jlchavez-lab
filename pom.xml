@@ -81,6 +81,12 @@
             <version>v2-rev20200813-1.30.10</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.mandrillapp.wrapper.lutung</groupId>
+            <artifactId>lutung</artifactId>
+            <version>0.0.8</version>
+        </dependency>
+
 
     </dependencies>
 
