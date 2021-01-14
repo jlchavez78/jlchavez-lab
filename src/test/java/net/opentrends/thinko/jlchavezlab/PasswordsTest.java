@@ -19,7 +19,9 @@ public class PasswordsTest {
     public void test() {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         List<String> usuaris = new ArrayList<>();
-        usuaris.add("eugenia_robatto@outlook.com;Eugenia;Robatto;null");
+//        usuaris.add("tech@cyberclick.net;Tech;Cyberclick;null");
+        usuaris.add("ogil@cyberclick.net;Oier;Gil;null");
+//
 
         for (String user : usuaris) {
             String[] full = user.split(";");
@@ -38,7 +40,7 @@ public class PasswordsTest {
                     + "`name`, `newsletter_subscription`, `password`, `profile`, "
                     + "`recovery_date`, `recovery_link`, `sur_name`, `usertype`, `zipcode`, `profile_completed`,`beta_tester`) VALUES (" + "'" + data
                     + "','" + data + "','1','" + username + "','" + lastname + "',NULL,NULL,'1','" + name + "','0','"
-                    + encodedPassword + "','TEACHER'," + "NULL,NULL,'" + surname + "',NULL,NULL,1,1);");
+                    + encodedPassword + "','STUDENT'," + "NULL,NULL,'" + surname + "',NULL,NULL,1,1);");
         }
 
     }
