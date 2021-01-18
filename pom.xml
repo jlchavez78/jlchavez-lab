@@ -87,6 +87,12 @@
             <version>0.0.8</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.mixpanel</groupId>
+            <artifactId>mixpanel-java</artifactId>
+            <version>1.4.4</version>
+        </dependency>
+
 
     </dependencies>
 

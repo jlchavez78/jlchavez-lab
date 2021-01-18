@@ -5,10 +5,15 @@ import com.microtripit.mandrillapp.lutung.controller.MandrillTemplatesApi;
 import com.microtripit.mandrillapp.lutung.model.MandrillApiError;
 import com.microtripit.mandrillapp.lutung.view.MandrillMessage;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class MandrillTest {
 
     private static final String key = "_zmFlZSsNCRJYNEH2fL8Tw";
