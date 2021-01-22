@@ -6,4 +6,6 @@ import lombok.Data;
 public class Contact {
     public String id;
     public Properties properties;
+
+
 }
