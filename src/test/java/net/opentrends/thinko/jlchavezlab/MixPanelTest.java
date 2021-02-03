@@ -638,6 +638,7 @@ public class MixPanelTest {
 
                 MixpanelAPI mixpanel = new MixpanelAPI();
                 mixpanel.deliver(delivery);
+                System.out.println("Esto sube!!!");
             } catch (Exception e) {
                 e.printStackTrace();
                 System.out.println("Esta es una US nueva que no puede subir");
