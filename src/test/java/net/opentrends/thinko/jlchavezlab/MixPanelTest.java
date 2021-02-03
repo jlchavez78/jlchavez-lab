@@ -640,6 +640,7 @@ public class MixPanelTest {
                 mixpanel.deliver(delivery);
             } catch (Exception e) {
                 e.printStackTrace();
+                System.out.println("Esta es una US nueva que no puede subir");
             }
         }
 
