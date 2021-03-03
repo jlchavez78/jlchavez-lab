@@ -75,8 +75,8 @@ public class ImportToHubspotAndThinko {
                 row.createCell(2).setCellValue(mail);
                 row.createCell(3).setCellValue(phone);
                 row.createCell(4).setCellValue("Sí");
-                row.createCell(5).setCellValue("02/12/2021");
-                row.createCell(6).setCellValue("21:40");
+                row.createCell(5).setCellValue("02/15/2021");
+                row.createCell(6).setCellValue("18:48");
             }
         }
         hubspot.write(outFile);

@@ -31,4 +31,9 @@ public class Properties {
     public String thinko_creas_programaciones_didacticas_creas_para_tus_clases_;
     public String thinko_cuantas_programaciones_didacticas_has_creado_con_otras_metodologias_en_el_ultimo_ano_;
     public String thinko_en_que_periodos_programas_;
+    public String thinko_grupo_de_control;
+    public String thinko_premiosabp_feb21_membergetmember;
+    public String thinko_webinar_conecta_1_membergetmember_9mar21;
+    public String thinko_webinar_conecta_1_membergetmember_16mar21;
+    public String thinko_webinar_conecta_1_membergetmember_23mar21;
 }

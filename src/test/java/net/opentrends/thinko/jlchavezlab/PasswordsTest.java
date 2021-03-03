@@ -30,18 +30,20 @@ public class PasswordsTest {
             String surname = full[2];
             String lastname = full[3];
             String[] partes = username.split("@");
-            String password = partes[0];
+            String password = "123456789";
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
             String data = sdf.format(Calendar.getInstance().getTime());
 
             String encodedPassword = passwordEncoder.encode(password);
-            System.out.println("INSERT INTO `users`(`created_at`, `updated_at`, `active`, `email`, "
-                    + "`last_name`, `link_date`, `linkurl`, `mail_sended`, "
-                    + "`name`, `newsletter_subscription`, `password`, `profile`, "
-                    + "`recovery_date`, `recovery_link`, `sur_name`, `usertype`, `zipcode`, `profile_completed`,`beta_tester`) VALUES (" + "'" + data
-                    + "','" + data + "','1','" + username + "','" + lastname + "',NULL,NULL,'1','" + name + "','0','"
-                    + encodedPassword + "','STUDENT'," + "NULL,NULL,'" + surname + "',NULL,NULL,1,1);");
+            System.out.println(encodedPassword);
+//            System.out.println("INSERT INTO `users`(`created_at`, `updated_at`, `active`, `email`, "
+//                    + "`last_name`, `link_date`, `linkurl`, `mail_sended`, "
+//                    + "`name`, `newsletter_subscription`, `password`, `profile`, "
+//                    + "`recovery_date`, `recovery_link`, `sur_name`, `usertype`, `zipcode`, `profile_completed`,`beta_tester`) VALUES (" + "'" + data
+//                    + "','" + data + "','1','" + username + "','" + lastname + "',NULL,NULL,'1','" + name + "','0','"
+//                    + encodedPassword + "','STUDENT'," + "NULL,NULL,'" + surname + "',NULL,NULL,1,1);");
         }
-
+//        $2a$10$O96c/IRsrLfaKmifT8SPYesrYEoxMe9RjtaPfUw69E7D8nFCke/3W
+//        $2a$10$z5Y8NoetksMJkUbeG18EXuc4lrAOOwrGtr1tQ8f3fir0wKvmL.B06
     }
 }
